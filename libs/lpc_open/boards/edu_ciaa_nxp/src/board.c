@@ -267,6 +267,17 @@ bool Board_TEC_GetStatus(uint8_t button)
 }
 
 
+bool Board_GPIO_GetStatus(uint8_t port_num)
+{
+   if (port_num >= GPIO_PORTS_SIZE) {
+      return false;
+   }
+
+   return Chip_GPIO_GetPinState(LPC_GPIO_PORT, GpioPorts[port_num].port,
+                                GpioPorts[port_num].pin);
+}
+
+
 void Board_ADC_ReadBegin(ADC_CHANNEL_T channel)
 {
    if (channel < ADC_CH0 || channel > ADC_CH3) {

@@ -108,6 +108,7 @@ extern "C" {
 
 
 bool Board_TEC_GetStatus(uint8_t button);
+bool Board_GPIO_GetStatus(uint8_t port_num);
 void Board_ADC_ReadBegin(ADC_CHANNEL_T channel);
 bool Board_ADC_ReadWait();
 uint16_t Board_ADC_ReadEnd();
